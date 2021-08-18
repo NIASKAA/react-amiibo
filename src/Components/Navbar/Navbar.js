@@ -1,11 +1,11 @@
-import React from 'react'
-import {AppBar, Toolbar, Button, IconButton} from '@material-ui/core'
-import {ExampleModels} from '../ExampleModels/ExampleModels'
+import React, {useState} from 'react'
+import {AppBar, Toolbar, Button, IconButton, Modal} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
 import './styles.css'
 
 const Navigation = () => {
- 
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <>
             <AppBar position="static">
@@ -15,7 +15,7 @@ const Navigation = () => {
                     </IconButton>
                     <Button color="inherit">Home</Button>
                     <Button color="inherit">About</Button>
-                    <Button onClick={""}color="inherit">Examples</Button>
+                    <Button onClick={""} color="inherit">Examples</Button>
                 </Toolbar>
             </AppBar>
         </>
