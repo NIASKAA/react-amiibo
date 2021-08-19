@@ -8,7 +8,7 @@ const Navigation = () => {
 
     return (
         <>
-            <AppBar position="static">
+            <AppBar position="static" className="navbar">
                 <Toolbar>
                     <IconButton edge="start" className={""} color="inherit" aria-label="menu">
                     <MenuIcon />

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {TextField, FormControl, Card, CardHeader, Typography, CardContent, Container} from '@material-ui/core'
 import axios from 'axios'
+import useStyles from './styles.js'
 
 const Home = () => {
     const [result, setResult] = useState(null)
@@ -9,12 +10,17 @@ const Home = () => {
     const [gameInput, setGameInput] = useState({value: ""})
     const url = `https://www.amiiboapi.com/api/amiibo/?name=${nameInput}`;
     const gameUrl = `https://www.amiiboapi.com/api/amiibo/?gameseries=${gameInput}`;
+
+    const classes = useStyles();
+
     useEffect(() => {
         axios.get(url)
         .then(response => {
             setResult(response.data.amiibo[0])
         }, [url])
-        
+        .catch((error) => {
+            console.log(error)
+        })
     })
 
     useEffect(() => {
@@ -22,21 +28,24 @@ const Home = () => {
         .then(response => {
             SetGameResult(response.data.amiibo[0])
         }, [gameUrl])
+        .catch((error) => {
+            console.log(error)
+        })
     })
 
     if(result) {
         return (
             <>
-                <FormControl>
+                <FormControl className="formContainer">
                     <TextField 
-                        className="nameInput" 
+                        className={classes.nameInput}
                         onChange={(e) => setNameInput(e.target.value)} 
                         variant="outlined" 
                         label="Search through name"
                     />
                     
                     <TextField 
-                        className="gameInput" 
+                        className={classes.gameInput}
                         onChange={(e) => setGameInput(e.target.value)} 
                         variant="outlined" 
                         label="Search through game series" 
@@ -75,16 +84,17 @@ const Home = () => {
     if(gameResult) {
         return (
             <>
-               <FormControl>
+               <FormControl className="formContainer">
                     <TextField 
-                        className="nameInput" 
+                        className={classes.nameInput}
                         onChange={(e) => setNameInput(e.target.value)} 
                         variant="outlined" 
                         label="Search through name"
                     />
                     
                     <TextField 
-                        className="gameInput" 
+                        className={classes.gameInput}
+                        id="gameInput"
                         onChange={(e) => setGameInput(e.target.value)} 
                         variant="outlined" 
                         label="Search through game series" 
@@ -122,16 +132,16 @@ const Home = () => {
 
     return (
         <>
-           <FormControl>
+           <FormControl className="formContainer">
                 <TextField 
-                    className="nameInput" 
+                    className={classes.nameInput}
                     onChange={(e) => setNameInput(e.target.value)} 
                     variant="outlined" 
                     label="Search through name"
                 />
                 
                 <TextField 
-                    className="gameInput" 
+                    className={classes.gameInput}
                     onChange={(e) => setGameInput(e.target.value)} 
                     variant="outlined" 
                     label="Search through game series" 
