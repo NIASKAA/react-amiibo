@@ -27,34 +27,47 @@ const Home = () => {
     if(result) {
         return (
             <>
-              <TextField id="outlined-basic"  onChange={(e) => setNameInput(e.target.value)} variant="outlined" />
-              <TextField id="outlined-basic" onChange={(e) => setGameInput(e.target.value)} variant="outlined" />
-              
-              <Container>
-                  <Card>
-                      <CardHeader title={result.name} className="cardTitle"></CardHeader>
-                      <img src={result.image}/>
-                      <CardContent>
-                          <Typography>
-                              Character: {result.character}
-                              <br/>
-                              Amiibo Series: {result.amiiboSeries}
-                              <br/>
-                              Game Series: {result.gameSeries}
-                              <br/>
-                              Release Date for Australia: {result.release.au}
-                              <br/>
-                              Release Date for Europe: {result.release.eu}
-                              <br/>
-                              Release Date for Japan: {result.release.jp}
-                              <br/>
-                              Release Date for America: {result.release.na}
-                              <br/>
-                              Type: {result.type}
-                          </Typography>
-                      </CardContent>
-                  </Card>
-              </Container>
+                <FormControl>
+                    <TextField 
+                        className="nameInput" 
+                        onChange={(e) => setNameInput(e.target.value)} 
+                        variant="outlined" 
+                        label="Search through name"
+                    />
+                    
+                    <TextField 
+                        className="gameInput" 
+                        onChange={(e) => setGameInput(e.target.value)} 
+                        variant="outlined" 
+                        label="Search through game series" 
+                    />
+                </FormControl>
+                
+                <Container>
+                    <Card>
+                        <CardHeader title={result.name} className="cardTitle"></CardHeader>
+                        <img src={result.image}/>
+                        <CardContent>
+                            <Typography>
+                                Character: {result.character}
+                                <br/>
+                                Amiibo Series: {result.amiiboSeries}
+                                <br/>
+                                Game Series: {result.gameSeries}
+                                <br/>
+                                Release Date for Australia: {result.release.au}
+                                <br/>
+                                Release Date for Europe: {result.release.eu}
+                                <br/>
+                                Release Date for Japan: {result.release.jp}
+                                <br/>
+                                Release Date for America: {result.release.na}
+                                <br/>
+                                Type: {result.type}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Container>
             </>
         )
     }
@@ -62,42 +75,68 @@ const Home = () => {
     if(gameResult) {
         return (
             <>
-              <TextField id="outlined-basic"  onChange={(e) => setNameInput(e.target.value)} variant="outlined" />
-              <TextField id="outlined-basic" onChange={(e) => setGameInput(e.target.value)} variant="outlined" />
+               <FormControl>
+                    <TextField 
+                        className="nameInput" 
+                        onChange={(e) => setNameInput(e.target.value)} 
+                        variant="outlined" 
+                        label="Search through name"
+                    />
+                    
+                    <TextField 
+                        className="gameInput" 
+                        onChange={(e) => setGameInput(e.target.value)} 
+                        variant="outlined" 
+                        label="Search through game series" 
+                    />
+                </FormControl>
               
-              <Container>
-                  <Card>
-                      <CardHeader title={gameResult.name} className="cardTitle"></CardHeader>
-                      <img src={gameResult.image}/>
-                      <CardContent>
-                          <Typography>
-                              Character: {gameResult.character}
-                              <br/>
-                              Amiibo Series: {gameResult.amiiboSeries}
-                              <br/>
-                              Game Series: {gameResult.gameSeries}
-                              <br/>
-                              Release Date for Australia: {gameResult.release.au}
-                              <br/>
-                              Release Date for Europe: {gameResult.release.eu}
-                              <br/>
-                              Release Date for Japan: {gameResult.release.jp}
-                              <br/>
-                              Release Date for America: {gameResult.release.na}
-                              <br/>
-                              Type: {gameResult.type}
-                          </Typography>
-                      </CardContent>
-                  </Card>
-              </Container>
+                <Container>
+                    <Card>
+                        <CardHeader title={gameResult.name} className="cardTitle"></CardHeader>
+                        <img src={gameResult.image}/>
+                        <CardContent>
+                            <Typography>
+                                Character: {gameResult.character}
+                                <br/>
+                                Amiibo Series: {gameResult.amiiboSeries}
+                                <br/>
+                                Game Series: {gameResult.gameSeries}
+                                <br/>
+                                Release Date for Australia: {gameResult.release.au}
+                                <br/>
+                                Release Date for Europe: {gameResult.release.eu}
+                                <br/>
+                                Release Date for Japan: {gameResult.release.jp}
+                                <br/>
+                                Release Date for America: {gameResult.release.na}
+                                <br/>
+                                Type: {gameResult.type}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Container>
             </>
         )
     }
 
     return (
         <>
-            <TextField id="outlined-basic" onChange={(e) => setNameInput(e.target.value)} variant="outlined" />
-            <TextField id="outlined-basic" onChange={(e) => setGameInput(e.target.value)} variant="outlined" />
+           <FormControl>
+                <TextField 
+                    className="nameInput" 
+                    onChange={(e) => setNameInput(e.target.value)} 
+                    variant="outlined" 
+                    label="Search through name"
+                />
+                
+                <TextField 
+                    className="gameInput" 
+                    onChange={(e) => setGameInput(e.target.value)} 
+                    variant="outlined" 
+                    label="Search through game series" 
+                />
+            </FormControl>
         </>
     )
 }
