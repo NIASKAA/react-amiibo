@@ -9,6 +9,7 @@ function App() {
         <Navigation/>
           <Switch>
             <Route exact path="/" component={Home}/>  
+            <Route exact path="/about" component={About}/>
           </Switch>
         <Footer/> 
       </Router>

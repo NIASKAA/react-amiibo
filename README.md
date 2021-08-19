@@ -18,9 +18,8 @@ Add badges from somewhere like:
   
 ## Deployment
 
-Link to heroku: 
+Link to heroku: https://reactamiibo.herokuapp.com/
 
-  
   
 ## Authors
 
