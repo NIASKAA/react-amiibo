@@ -132,7 +132,9 @@ const Home = () => {
 
     return (
         <>
-           <FormControl className="formContainer">
+            <img src="/images/amiibo.png" alt="amiiboLogo" className={classes.amiiboLogo}/>
+            <br/>
+            <FormControl className="formContainer">
                 <TextField 
                     className={classes.nameInput}
                     onChange={(e) => setNameInput(e.target.value)} 
