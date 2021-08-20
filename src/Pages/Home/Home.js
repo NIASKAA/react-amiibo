@@ -17,7 +17,7 @@ const Home = () => {
         axios.get(url)
         .then(response => {
             setResult(response.data.amiibo[0])
-        }, [url])
+        }, [])
         .catch((error) => {
             console.log(error)
         })
@@ -27,7 +27,7 @@ const Home = () => {
         axios.get(gameUrl)
         .then(response => {
             SetGameResult(response.data.amiibo[0])
-        }, [gameUrl])
+        }, [])
         .catch((error) => {
             console.log(error)
         })
