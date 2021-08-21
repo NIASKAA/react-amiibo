@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {AppBar, Toolbar, Button, IconButton, Modal} from '@material-ui/core'
+import Fade from '@material-ui/core/Fade';
 import {Link} from 'react-router-dom'; 
 import useStyles from './styles.js'
 
@@ -16,11 +17,13 @@ const Navigation = () => {
     }
 
     const body = (
-        <div className={classes.paper}>
-            Some names to search: Mario, Peach, Link, Isabella
-            <br/>
-            Some series to search could be: Super Mario, Legend of Zelda
-        </div>
+        <Fade in={openModal}>
+            <div className={classes.paper}>
+                Some names to search: Mario, Peach, Link, Isabella
+                <br/>
+                Some series to search could be: Super Mario, Legend of Zelda
+            </div>
+        </Fade>
     )
     return (
         <>
@@ -32,6 +35,7 @@ const Navigation = () => {
                     <Modal 
                         open={openModal}
                         onClose={handleClose}
+                        className={classes.modal}
                     >
                         {body}
                     </Modal>
