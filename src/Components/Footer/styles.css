@@ -1,5 +1,10 @@
 .footer {
-    bottom: 0;
+    bottom: -11%;
     position: absolute;
     width: 100%;
+}
+
+.footerContact {
+    text-decoration: none;
+    color: black;
 }

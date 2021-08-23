@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
-import {TextField} from '@material-ui/core'
+import {FormControl, TextField, Button} from '@material-ui/core'
 import {send} from 'emailjs-com'
+import useStyles from './styles.js'
+
 const Contact = () => {
+    const classes = useStyles();
     const [toSend, setToSend] = useState({
         fromName: '',
         replyTo: '',
@@ -25,27 +28,44 @@ const Contact = () => {
     return (
         
         <>
+        <h2>Contact</h2>
            <form onSubmit={onSubmit}>
-                <TextField 
-                    label="Name" 
-                    value={toSend.fromName}
-                    type="name" 
-                    onChange={handleChange}
-                />
-
-                <TextField 
-                    label="Email" 
-                    value={toSend.replyTo}
-                    type="Email" 
-                    onChange={handleChange}
-                />
-                <TextField 
-                    label="Message" 
-                    maxRows={4}
-                    value={toSend.message}
-                    type="message" 
-                    onChange={handleChange}
-                />
+                <FormControl>
+                        <TextField 
+                            label="Name" 
+                            value={toSend.fromName}
+                            className={classes.nameInput}
+                            type="name" 
+                            onChange={handleChange}
+                            variant="filled"
+                        />
+                </FormControl>
+                <br/>
+                <FormControl>
+                    <TextField 
+                        label="Email" 
+                        value={toSend.replyTo}
+                        className={classes.emailInput}
+                        type="Email" 
+                        onChange={handleChange}
+                        variant="filled"
+                    />
+                </FormControl>
+                <br/>
+                <FormControl>
+                    <TextField 
+                        label="Message" 
+                        rows={4}
+                        multiline
+                        value={toSend.message}
+                        className={classes.messageInput}
+                        type="message" 
+                        onChange={handleChange}
+                        variant="filled"
+                    />
+                </FormControl>
+                <br/>
+                <Button type="submit" variant="primary" className="sendIt">Send It!</Button>
            </form>
         </>
     )

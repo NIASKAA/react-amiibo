@@ -22,6 +22,9 @@ const Navigation = () => {
                 Some names to search: Mario, Peach, Link, Isabella
                 <br/>
                 Some series to search could be: Super Mario, Legend of Zelda
+                <br/>
+                Example of a search below
+                <img src="/images/modal.png" className={classes.image}/>
             </div>
         </Fade>
     )

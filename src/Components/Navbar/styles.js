@@ -11,10 +11,16 @@ export default makeStyles((theme) => ({
     },
     paper: {
         position: 'absolute',
-        width: '400px',
+        width: '500px',
         backgroundColor: 'white',
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2,4,3)
-      },
+    },
+    image: {
+        width: '500px',
+        margin: '1%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 }));
