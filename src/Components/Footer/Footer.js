@@ -7,7 +7,7 @@ const Footer = () => {
         <>
             <div className="footer">
                 <p>@1996 Niaska Productions -For Educational Purposes Only-</p>
-                <p>Contact</p>
+                <a href="/contact">Contact</a>
             </div>
         </>
     )
