@@ -11,4 +11,7 @@ export default makeStyles(() => ({
         textAlign: 'left',
         marginTop: '4%'
     },
+    amiiboLogo: {
+        width: '500px'
+    }
 }));
