@@ -22,7 +22,7 @@ Add badges from somewhere like:
   
 ## Deployment
 
-Link to heroku: https://reactamiibo.herokuapp.com/
+Link to heroku: https://amiiboreact.herokuapp.com/
 
   
 ## Authors
